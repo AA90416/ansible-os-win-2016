@@ -1,9 +1,16 @@
 ---
 ---
-- name: Harden Server
-  hosts: all
+- name: Configure instance(s)
+  hosts: 192.168.2.136
+  become: True
+  gather_facts: True
   roles:
     - role: windows-2016-cis-benchmarks
+  
+#- name: Harden Server
+#  hosts: all
+#  roles:
+#    - role: windows-2016-cis-benchmarks
 
 ##############PLaybook notes#############
 
