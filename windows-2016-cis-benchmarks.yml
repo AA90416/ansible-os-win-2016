@@ -1,5 +1,9 @@
 ---
-
+---
+- name: Harden Server
+  hosts: 192.168.2.136
+  roles:
+    - role: windows-2016-cis-benchmarks
 
 ##############PLaybook notes#############
 
@@ -29,13 +33,13 @@
 #        timeout: 600
 #      when: os == "windows"
       
-- hosts: '{{ target }}'
+#- hosts: '{{ target }}'
 #  vars:
 #    root_password: "{{ win_pass }}"        
 
 
-  roles: 
-    - role: windows-2016-cis-benchmarks
+#  roles: 
+#    - role: windows-2016-cis-benchmarks
 
 
 
