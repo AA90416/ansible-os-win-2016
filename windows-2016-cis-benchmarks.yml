@@ -1,9 +1,13 @@
----
+----
+- name: Provision a set of instances
+  hosts: localhost
+  # ... AS ABOVE ...
 
----
-- hosts: tag_Ansible_Slave
+- hosts: ec2hosts
+  name: configuration play
   user: ec2-user
-  sudo: yes
+  gather_facts: true
+
 #  tasks:
 #    - name: Update all packages to latest
 #      yum: name=* state=latest#
