@@ -5,29 +5,29 @@
 
 
 ###########Creates inventory of new server in memory#############
-- hosts: localhost
-  connection: local
-  tasks:
+#- hosts: localhost
+#  connection: local
+#  tasks:
 
-    - name: make inventory win
-      add_host:
-        name: "{{ target }}"
-        ansible_host: "{{ ansible_inv_host }}"
-        ansible_user: Administrator
-        ansible_ssh_pass: "{{ win_pass }}"
-        ansible_connection: winrm
-        ansible_port: 5986
-        ansible_winrm_server_cert_validation: ignore
-        ansible_winrm_operation_timeout_sec: 100
-        ansible_winrm_read_timeout_sec: 120
-      when: os == "windows"
+#    - name: make inventory win
+#      add_host:
+#        name: "{{ target }}"
+#        ansible_host: "{{ ansible_inv_host }}"
+#        ansible_user: Administrator
+#        ansible_ssh_pass: "{{ win_pass }}"
+#        ansible_connection: winrm
+#        ansible_port: 5986
+#        ansible_winrm_server_cert_validation: ignore
+#        ansible_winrm_operation_timeout_sec: 100
+#        ansible_winrm_read_timeout_sec: 120
+#      when: os == "windows"
 
-    - name: wait for winrm
-      wait_for:
-        port: 5986
-        host: "{{ ansible_inv_host }}"
-        timeout: 600
-      when: os == "windows"
+#    - name: wait for winrm
+#      wait_for:
+#        port: 5986
+#        host: "{{ ansible_inv_host }}"
+#        timeout: 600
+#      when: os == "windows"
       
 - hosts: '{{ target }}'
   vars:
