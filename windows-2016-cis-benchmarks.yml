@@ -1,8 +1,20 @@
 ---
-- ec2_ip_address: 192.168.2.136
+
+---
+- hosts: tag_Ansible_Slave
+  user: ec2-user
+  sudo: yes
+#  tasks:
+#    - name: Update all packages to latest
+#      yum: name=* state=latest#
+#
+#    - name: Install specific nginx package for centos 7
+#      yum: name='http://nginx.org/packages/centos/7/noarch/RPMS/nginx-\release-centos-7-0.el7.ngx.noarch.rpm' state=present
+
+#- ec2_ip_address: 192.168.2.136
 #    win_ec2_name_prefix: example
-  roles:
-    - role: windows-2016-cis-benchmarks
+#  roles:
+#    - role: windows-2016-cis-benchmarks
   
   
 #- name: Configure instance(s)
