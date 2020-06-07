@@ -30,8 +30,8 @@
 #      when: os == "windows"
       
 - hosts: '{{ target }}'
-  vars:
-    root_password: "{{ win_pass }}"        
+#  vars:
+#    root_password: "{{ win_pass }}"        
 
 
   roles: 
