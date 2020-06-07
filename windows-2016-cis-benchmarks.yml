@@ -1,7 +1,22 @@
 ----
-plugin: aws_ec2
-regions:
-  - us-east-1
+---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
+  tasks:
+   - name: Launch the new EC2 Instance
+     ec2:
+       group: "{{ ec2_security_group }}"
+       instance_type: "{{ ec2_instance_type }}"
+       image: "{{ ec2_ami }}"
+       wait: true 
+       region: "{{ ec2_region }}"
+       keypair: "{{ ec2_keypair }}"
+       count: 1
+       vpc_subnet_id: "{{ ec2_vpc_subnet_id }}"
+     register: ec2
+
 #  tasks:
 #    - name: Update all packages to latest
 #      yum: name=* state=latest#
