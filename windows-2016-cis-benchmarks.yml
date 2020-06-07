@@ -1,6 +1,6 @@
 ----
 - name: Configure instance(s)
-  hosts: 192.168.2.40
+  hosts: all
   become: True
   gather_facts: True
   roles:
