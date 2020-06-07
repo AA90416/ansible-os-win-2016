@@ -1,13 +1,7 @@
 ----
-- name: Provision a set of instances
-  hosts: localhost
-  # ... AS ABOVE ...
-
-- hosts: ec2hosts
-  name: configuration play
-  user: ec2-user
-  gather_facts: true
-
+plugin: aws_ec2
+regions:
+  - us-east-1
 #  tasks:
 #    - name: Update all packages to latest
 #      yum: name=* state=latest#
