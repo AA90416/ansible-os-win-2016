@@ -1,7 +1,7 @@
 ---
 ---
 - name: Harden Server
-  hosts: 
+  hosts: all
   roles:
     - role: windows-2016-cis-benchmarks
 
