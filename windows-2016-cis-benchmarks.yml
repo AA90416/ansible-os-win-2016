@@ -1,7 +1,5 @@
 ---
-- hosts: localhost
-  vars:
-    ec2_private_ip_address: 192.168.2.136
+- ec2_ip_address: 192.168.2.136
 #    win_ec2_name_prefix: example
   roles:
     - role: windows-2016-cis-benchmarks
